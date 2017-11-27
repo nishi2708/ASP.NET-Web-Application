@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+ <title>Utility Unit</title>
+
+ <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+ <form id="form1" runat="server">
+ <div id="topContent">
+   <asp:ContentPlaceHolder id="head" runat="server">
+    <a href="Default.aspx" style="color:white">Utility Unit</a>
+    <a href="MemberRegistration.aspx" style="color:white ;margin-left: 200px" >Register</a>&nbsp;&nbsp;
+    <a href="javascript:memberFunction()" style="color:white">Member Login</a>&nbsp;&nbsp;
+    <a href="javascript:staffFunction()" style="color:white">Staff Login</a>&nbsp;&nbsp;
+  </asp:ContentPlaceHolder>
+ </div>
+ <script type="text/javascript">
+     function memberFunction() {
+         var sessionValue = '<%=Session["email"] != null%>';
+         if (sessionValue == 'True') {
+             window.location = "MemberHome.aspx";
+         }
+         else {
+             window.location = "MemberLogin.aspx";
+         }   
+     }
+
+     function staffFunction() {
+         var sessionValue = '<%=Session["username"] != null%>';
+         if (sessionValue == 'True') {
+             window.location = "StaffHome.aspx";
+         }
+         else {
+             window.location = "StaffLogin.aspx";
+         }   
+}
+</script>
+ <div id="mainContent">
+ <asp:ContentPlaceHolder id="MainContent" runat="server">
+ </asp:ContentPlaceHolder>
+ </div>
+ 
+ <div id="footerContent">
+ <p>@TeamCoderGirls</p>
+ </div>
+ </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿body {
+}
+#topContent {
+    text-align: left;
+    background-color: #600;
+    color: White;
+    font-size: x-large;
+    text-decoration: none;
+    padding: 10px;
+    height: 30px;
+}
+
+#footerContent {
+    text-align: left;
+    background-color: #600;
+    color: White;
+    font-size: medium;
+    padding: 10px;
+    height: 30px;
+}
+
+#mainContent {
+    height: 570px;
+}
+
+
+
